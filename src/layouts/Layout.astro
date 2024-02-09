@@ -16,7 +16,9 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-primary text-primary-50 font-mono min-w-[356px]">
+  <body
+    class="bg-primary text-primary-50 text-lg font-mono leading-relaxed min-w-[356px]"
+  >
     <slot />
   </body>
 </html>
@@ -26,20 +28,26 @@ const { title } = Astro.props
   https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
   */
   @font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat') url('/fonts/montserrat_variable.ttf')
-      format('truetype');
+    font-family: "Montserrat";
+    src: url("/fonts/montserrat_variable.ttf")
+      format("truetype");
     font-weight: 100 900;
     font-style: normal;
   }
   @font-face {
-    font-family: 'Fira Code';
-    src: local('Fira Code') url('/fonts/firacode_variable.ttf')
-      format('truetype');
+    font-family: "Fira Code";
+    src: url("/fonts/firacode_variable.ttf")
+      format("truetype");
     font-weight: 300 700;
     font-style: monospace;
   }
   html {
     background: #13151a;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans;
   }
 </style>

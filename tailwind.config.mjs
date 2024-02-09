@@ -1,4 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -18,6 +20,12 @@ export default {
           '900': '#3b3644',
           '950': '#242129',
           DEFAULT: '#242129',
+        },
+        'secondary': {
+          // make an alias for the secondary color
+          // add a default value as well
+          ...colors.purple,
+          DEFAULT: colors.purple[400],
         },
       },
       fontFamily: {
