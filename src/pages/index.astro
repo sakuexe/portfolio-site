@@ -4,9 +4,14 @@ import AboutMe from "./_aboutme.astro"
 ---
 
 <Layout title="Saku's Portfolio - Welcome">
-  <header class="px-5 font-sans min-h-[90vh] flex flex-col justify-center items-stretch">
-    <h1 class="font-bold text-header">Saku Karttunen</h1>
-    <p class="text-2xl font-light">Fullstack Developer / ICT-Engineering Student / Designer</p>
+  <header
+    id="hero"
+    class="px-5 font-sans min-h-[90vh] flex flex-col justify-center items-stretch"
+  >
+    <h1 class="font-bold text-header drop-shadow-lg">Saku Karttunen</h1>
+    <p class="text-2xl drop-shadow-lg mix-blend-difference">
+      Fullstack Developer / ICT-Engineering Student / Designer
+    </p>
   </header>
   <AboutMe />
 </Layout>

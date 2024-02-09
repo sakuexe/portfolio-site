@@ -1,0 +1,17 @@
+---
+interface Props {
+  type: "primary" | "secondary"
+}
+
+const { type } = Astro.props
+---
+
+<button
+  class={`px-4 py-2 ${
+    type === "primary"
+      ? "bg-secondary"
+      : "outline outline-2 outline-secondary text-secondary"
+  }`}
+>
+  <slot>{type} button</slot>
+</button>

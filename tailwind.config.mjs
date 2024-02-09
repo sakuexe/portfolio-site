@@ -25,7 +25,7 @@ export default {
           // make an alias for the secondary color
           // add a default value as well
           ...colors.purple,
-          DEFAULT: colors.purple[400],
+          DEFAULT: colors.purple[500],
         },
       },
       fontFamily: {

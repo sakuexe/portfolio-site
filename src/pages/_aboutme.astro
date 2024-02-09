@@ -1,13 +1,18 @@
 ---
 import Header from "../components/header.astro"
+import Button from "../components/button.astro"
+import SKLogo from "../components/sklogo.astro"
 ---
 
-<section id="aboutme">
-  <Header id={1} title="Who Am I?" subtitle="About me"/>
+<section id="aboutme" class="space-y-5 px-5 relative overflow-hidden">
+  <Header id={1} title="Who Am I?" subtitle="About me" />
   <p>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem,
-    iste corporis corrupti explicabo omnis voluptates voluptate placeat
-    praesentium, beatae a cumque consequatur ratione modi minus molestias non
-    similique.
+    iste corporis corrupti testestset <a href="">Github</a> explicabo omnis voluptates
+    voluptate placeat praesentium, beatae a cumque consequatur ratione modi minus
+    molestias non similique.
   </p>
+  <Button type="primary">Download CV</Button>
+  <SKLogo classes="opacity-25 max-w-xl min-w-xl" />
+  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary to-transparent -z-10"></div>
 </section>
