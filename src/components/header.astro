@@ -2,13 +2,15 @@
 interface Props {
   id: number
   title: string
-  subtitle: string
+  isCentered?: boolean
 }
 
-const { id, title, subtitle } = Astro.props
+const { id, title, isCentered } = Astro.props
 ---
 
-<div>
-  <p><span class="text-secondary">// 0{id} </span>{subtitle}</p>
-  <h2 class="text-subheader font-bold font-sans">{title}</h2>
+<div class={`${isCentered ? "flex flex-col items-center" : ""}`}>
+  <div>
+    <p><span class="text-secondary">// 0{id} </span>{title}</p>
+    <h2 class="text-subheader font-bold font-sans"><slot>Header</slot></h2>
+  </div>
 </div>

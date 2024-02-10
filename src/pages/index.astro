@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import AboutMe from "./_aboutme.astro"
+import Expertise from "./_expertise.astro"
 ---
 
 <Layout title="Saku's Portfolio - Welcome">
@@ -13,5 +14,8 @@ import AboutMe from "./_aboutme.astro"
       Fullstack Developer / ICT-Engineering Student / Designer
     </p>
   </header>
-  <AboutMe />
+  <div class="space-y-36">
+    <AboutMe />
+    <Expertise />
+  </div>
 </Layout>

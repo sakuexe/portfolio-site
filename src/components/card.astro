@@ -1,0 +1,34 @@
+---
+import Icon from "../components/icons.astro"
+
+interface Props {
+  title: string
+  type: "web" | "software" | "design"
+}
+
+const { title, type } = Astro.props
+---
+
+<div
+  class="outline outline-2 outline-primary-300 max-w-md mx-auto p-6 space-y-3
+  drop-shadow-lg backdrop-brightness-90 backdrop-blur-sm"
+>
+  <div class="flex items-center gap-x-5">
+    <Icon type={type} color="fill-primary-100" classes="w-20" />
+    <h3 class="text-3xl font-bold">
+      {title}
+    </h3>
+  </div>
+  <div class="flex gap-x-3">
+    <div
+      class="opacity-75 flex flex-col items-center mr-auto select-none"
+    >
+      <pre>&lt;h3&gt;</pre>
+      <div class="h-full w-0.5 bg-primary-300"></div>
+      <pre>&lt;/h3&gt;</pre>
+    </div>
+    <p class="py-6">
+      <slot />
+    </p>
+  </div>
+</div>
