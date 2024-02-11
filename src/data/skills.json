@@ -1,0 +1,47 @@
+[
+  {
+    "type": "bar",
+    "title": "Frontend Development",
+    "value": 74
+  },
+  {
+    "type": "bar",
+    "title": "Backend Development",
+    "value": 82
+  },
+  {
+    "type": "bar",
+    "title": "Mobile Development",
+    "value": 68
+  },
+  {
+    "type": "pie",
+    "title": "Typescript",
+    "value": 85
+  },
+  {
+    "type": "pie",
+    "title": "Python",
+    "value": 79
+  },
+  {
+    "type": "pie",
+    "title": "C#/.NET",
+    "value": 63
+  },
+  {
+    "type": "pie",
+    "title": "Node.js",
+    "value": 74
+  },
+  {
+    "type": "pie",
+    "title": "Adobe Software",
+    "value": 75
+  },
+  {
+    "type": "pie",
+    "title": "UI/UX Design",
+    "value": 62
+  }
+]

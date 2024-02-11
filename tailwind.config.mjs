@@ -1,5 +1,5 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+import defaultTheme from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -26,6 +26,12 @@ export default {
           // add a default value as well
           ...colors.purple,
           DEFAULT: colors.purple[500],
+        },
+        'accent': {
+          // make an alias for the accent color
+          // add a default value as well
+          ...colors.orange,
+          DEFAULT: colors.orange[300],
         },
       },
       fontFamily: {

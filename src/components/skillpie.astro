@@ -1,0 +1,55 @@
+---
+import resolveConfig from "tailwindcss/resolveConfig"
+import tailwindConfig from "../../tailwind.config.mjs"
+
+// had to put any here, since the type is not up to date
+// with my custom theme additions
+const { theme }: { theme: any } = resolveConfig(tailwindConfig)
+
+interface Props {
+  value: number // in percentage
+  index: number
+}
+
+const { value, index } = Astro.props
+const pieColor =
+  index % 2 === 0 ? theme.colors.secondary.DEFAULT : theme.colors.accent.DEFAULT
+const pieThickness = "0.5rem" // in percents
+---
+
+<div class="w-44 space-y-5">
+  <div class="pie aspect-square rounded-full">
+    <p class="font-bold" style={{ color: pieColor }}>{value}</p>
+  </div>
+  <p class="text-center"><slot>Skill Pie</slot></p>
+</div>
+
+<style define:vars={{ value, pieColor, pieThickness }}>
+  /* https://www.freecodecamp.org/news/css-only-pie-chart/ */
+  .pie {
+    position: relative;
+    width: 100%;
+    display: inline-grid;
+    place-content: center;
+  }
+  .pie::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--pieColor) calc(var(--value) * 1%),
+      theme("colors.primary.DEFAULT") 0
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--pieThickness)),
+      #000 calc(100% - var(--pieThickness))
+    );
+    mask: radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--pieThickness)),
+      #000 calc(100% - var(--pieThickness))
+    );
+  }
+</style>
