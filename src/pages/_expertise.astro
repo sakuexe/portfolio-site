@@ -3,7 +3,7 @@ import Header from "../components/header.astro"
 import Card from "../components/card.astro"
 ---
 
-<main id="expertise" class="space-y-8 py-8">
+<main id="expertise" class="space-y-8">
   <Header id={2} title="Expertise" isCentered>What Do I Do?</Header>
 
   <div class="flex flex-col gap-8 items-center">
@@ -23,3 +23,27 @@ import Card from "../components/card.astro"
     </Card>
   </div>
 </main>
+
+<style>
+  #expertise {
+    position: relative;
+    isolation: isolate;
+    background: url("/images/code.png") no-repeat -1rem center;
+    background-size: cover;
+    /* parallax effect */
+    background-attachment: fixed;
+    box-shadow: inset 0 0 4rem theme("colors.primary.DEFAULT");
+  }
+
+  /* Overlay - makes the background a little darker */
+  #expertise::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    @apply bg-primary opacity-50;
+  }
+</style>

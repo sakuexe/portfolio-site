@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import AboutMe from "./_aboutme.astro"
 import Expertise from "./_expertise.astro"
+import Skills from "./_skills.astro"
 ---
 
 <Layout title="Saku's Portfolio - Welcome">
@@ -14,8 +15,18 @@ import Expertise from "./_expertise.astro"
       Fullstack Developer / ICT-Engineering Student / Designer
     </p>
   </header>
-  <div class="space-y-36">
+  <div class="main-content">
     <AboutMe />
     <Expertise />
+    <Skills />
   </div>
 </Layout>
+
+<style>
+  header#hero {
+    background: url("/images/floating-cubes.jpg") no-repeat center center;
+    background-size: cover;
+    /* parallax effect */
+    /* background-attachment: fixed; */
+  }
+</style>
