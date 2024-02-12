@@ -6,6 +6,9 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      maxWidth: {
+        'content': '100rem',
+      },
       colors: {
         'primary': {
           '50': '#f7f6f9',

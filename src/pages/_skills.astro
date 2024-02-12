@@ -22,31 +22,35 @@ skills.map((skill: Skill) => {
 })
 ---
 
-<article class="px-5">
-  <Header id={3} title="Skills">My Skills & Tools</Header>
-  <p>
-    I Like learning new things. Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Dolorem consequuntur illo delectus asperiores sapiente
-    incidunt optio, vero cupiditate voluptatem eaque iste nobis qui. Id eos
-    explicabo vitae vel. Lorem ipsum dolor sit amet consectetur, adipisicing
-    elit. Voluptatum, quidem.
-  </p>
-  <div class="space-y-5 pb-8">
-    {
-      skillBars.map((skill: Skill, index: number) => (
-        <Skillbar value={skill.value} index={index}>
-          {skill.title}
-        </Skillbar>
-      ))
-    }
-  </div>
-  <div class="flex flex-wrap gap-8 justify-center">
-    {
-      skillPies.map((skill: Skill, index: number) => (
-        <Skillpie value={skill.value} index={index}>
-          {skill.title}
-        </Skillpie>
-      ))
-    }
+<article class="px-5 md:px-10">
+  <div class="max-w-content mx-auto grid gap-8 lg:grid-cols-2">
+    <div class="space-y-8 flex flex-col justify-center">
+      <Header id={3} title="Skills">My Skills & Tools</Header>
+      <p>
+        I Like learning new things. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Dolorem consequuntur illo delectus asperiores sapiente
+        incidunt optio, vero cupiditate voluptatem eaque iste nobis qui. Id eos
+        explicabo vitae vel. Lorem ipsum dolor sit amet consectetur, adipisicing
+        elit. Voluptatum, quidem.
+      </p>
+      <div class="space-y-5 pb-8">
+        {
+          skillBars.map((skill: Skill, index: number) => (
+            <Skillbar value={skill.value} index={index}>
+              {skill.title}
+            </Skillbar>
+          ))
+        }
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-8 justify-center">
+      {
+        skillPies.map((skill: Skill, index: number) => (
+          <Skillpie value={skill.value} index={index}>
+            {skill.title}
+          </Skillpie>
+        ))
+      }
+    </div>
   </div>
 </article>
