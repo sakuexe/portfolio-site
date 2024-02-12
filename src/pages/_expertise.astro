@@ -4,23 +4,26 @@ import Card from "../components/card.astro"
 ---
 
 <main id="expertise" class="px-5">
-  <Header id={2} title="Expertise" isCentered>What Do I Do?</Header>
+  <div class="max-w-[1500px] mx-auto space-y-8">
+    <Header id={2} title="Expertise" isCentered>What Do I Do?</Header>
 
-  <div class="flex flex-col gap-8 items-center">
-    <Card title="Fullstack Web Development" type="web">
-      Passion towards Web Development and love to work on both Frontend and
-      Backend. Experience working with many different frameworks and languages.
-    </Card>
+    <div class="flex flex-wrap gap-8 items-stretch">
+      <Card title="Fullstack Web Development" type="web">
+        Passion towards Web Development and love to work on both Frontend and
+        Backend. Experience working with many different frameworks and
+        languages.
+      </Card>
 
-    <Card title="Software Development" type="software">
-      Experience with both OOP and Functional Programming. Favorite languages
-      include Typescript, Python, C# and Kotlin.
-    </Card>
+      <Card title="Software Development" type="software">
+        Experience with both OOP and Functional Programming. Favorite languages
+        include Typescript, Python, C# and Kotlin.
+      </Card>
 
-    <Card title="UI/UX Design" type="design">
-      Professional background in Graphic Design has built a strong foundation
-      for UI/UX Design. Experience with Adobe Software and Figma.
-    </Card>
+      <Card title="UI/UX Design" type="design">
+        Professional background in Graphic Design has built a strong foundation
+        for UI/UX Design. Experience with Adobe Software and Figma.
+      </Card>
+    </div>
   </div>
 </main>
 
