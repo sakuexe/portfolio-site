@@ -1,0 +1,39 @@
+---
+// https://docs.astro.build/en/recipes/dynamically-importing-images/
+// https://docs.astro.build/en/guides/images/
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+import type { Work } from "../pages/_portfolio.astro"
+
+interface Props {
+  work: Work
+}
+
+const { work } = Astro.props
+const imagePath = `/src/images/${work.image}`
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{png,jpg,jpeg}"
+)
+
+if (!images[imagePath]) {
+  throw new Error(
+    `Image not found: ${imagePath} in glob src/images/*.{jpeg,jpg,png}`
+  )
+}
+---
+
+<div class="relative">
+  <div
+    class="flex items-center w-full aspect-video object-cover overflow-hidden group"
+  >
+    <Image
+      src={images[imagePath]()}
+      alt={work.alt}
+      class="transition-all duration-300 group-hover:scale-125"
+    />
+  </div>
+  <div>
+    <p>{work.type}</p>
+    <h4>{work.name}</h4>
+  </div>
+</div>

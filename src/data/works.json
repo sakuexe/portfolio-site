@@ -1,0 +1,52 @@
+[
+  {
+    "type": "Web Development",
+    "name": "Kantolan KunnonSali",
+    "image": "kantolan-kunnonsali.png",
+    "alt": "A screenshot of Kantolan KunnonSali's website. The frontpage includes a dark theme with blue accent colors.",
+    "description": "A local gym in Hämeenlinna. Summer 2022 I worked with a classmate of mine on reworking this gym’s website all together. The end product was satisfactory and now it is a lot easier to read and use than it’s previous version. We also included a backend system for the gym’s owner to easily change the schedules on the website",
+    "link": "https://kantolankunnonsali.fi/",
+    "github": "https://github.com/sakuexe/KantolanKunnonsali"
+  },
+  {
+    "type": "Graphic Design",
+    "name": "Business Card",
+    "image": "calling-card.jpg",
+    "alt": "A business card with a high contrast SK-logo on the front and a QR-code on the back. Resembling the calling cards from Persona 5.",
+    "description": "A business card that I designed for myself. I wanted to make sure that it was striking and memorable. The card draws heavy inspiration from the Persona 5 game, where calling cards were a big part of the story."
+  },
+  {
+    "type": "Web Development",
+    "name": "He-Ti Huolto",
+    "image": "heti-huolto.png",
+    "alt": "A screenshot of He-Ti Huolto's website.",
+    "description": "A website for a business based in Hämeenlinna. The website was part of a two-in-one project, where I also made the logo for the business.",
+    "link": "https://hetihuolto.com/",
+    "github": "https://github.com/sakuexe/he-tihuolto"
+  },
+  {
+    "type": "Web Development",
+    "name": "Miia Raussi",
+    "image": "miiaraussi.png",
+    "alt": "A screenshot of the frontpage of Miia Raussi's website.",
+    "description": "A website for my mother, who is pursuing a career in casting. I wanted to make the website as personable as possible and make it feel like her website.",
+    "link": "https://miiaraussi.com/",
+    "github": "https://github.com/sakuexe/miiajuonto"
+  },
+  {
+    "type": "Web Development",
+    "name": "Joat Rakennus Oy",
+    "image": "joat.png",
+    "alt": "A screenshot of Joat Rakennus Oy's website.",
+    "description": "A website for a construction company based in Hämeenlinna. The website was my first actual project for a client and I learned a lot from it. The website was built using HTML/CSS, Javascript and Bootstrap",
+    "link": "https://joat.fi/"
+  },
+  {
+    "type": "Graphic Design",
+    "name": "Korpilahden Kesäralli 2021",
+    "image": "korpilahtiralli.jpg",
+    "alt": "A poster for Korpilahden Kesäralli 2021. The poster includes a the iconic bridge of Korpilahti and a rally car jumping at the front.",
+    "description": "A poster and a logo for a local rally event in Korpilahti. They wanted to include the iconic bridge of the area in the logo and the end result was very well received.",
+    "link": "https://www.youtube.com/watch?v=cvHvETl9ryY"
+  }
+]

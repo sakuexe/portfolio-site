@@ -1,0 +1,31 @@
+---
+import Header from "../components/header.astro"
+import WorkCard from "../components/workcard.astro"
+import works from "../data/works.json"
+
+export type Work = (typeof works)[0]
+---
+
+<section id="portfolio" class="max-w-content mx-auto space-y-8 px-5 md:px-10">
+  <Header id={4} title="Portfolio" isCentered>My Works</Header>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque magnam sit
+    harum rem, itaque distinctio doloremque aspernatur unde, corporis explicabo
+    sint recusandae quam. Aperiam nemo excepturi atque nulla tempore itaque quis
+    fugit vitae animi iusto?
+  </p>
+  <p>
+    If you would like to hear more about my projects and prior work, feel free
+    to
+    <a href="#contact">contact me</a>. I am always down to discuss my work and
+    how they came to be, as well as the technologies and tools I used to create
+    them.
+  </p>
+  <p>
+    Filter by <span class="text-secondary">All</span> / Web Development / Graphic
+    Design
+  </p>
+  <div>
+    {works.map((work: Work) => <WorkCard work={work} />)}
+  </div>
+</section>
