@@ -1,0 +1,56 @@
+[
+  {
+    "title": "ICT-Engineer",
+    "timespan": "2021 - 2025",
+    "company": "Information and Communication Technology",
+    "location": "HAMK University of Applied Sciences, Riihimäki",
+    "description": "I am currently a third year ICT-Engineering student at HAMK Riihimäki. I started in 2021 and I am profiling my skills towards becoming a software engineer.",
+    "skills": [
+      "Programming",
+      "Software Development",
+      "Report Writing",
+      "DevOps",
+      "Mathematics"
+    ]
+  },
+  {
+    "title": "Freelance Developer & Designer",
+    "timespan": "2019 - Current",
+    "company": "Freelance Work",
+    "location": "Riihimäki, Remote",
+    "description": "I have worked since 2019 as a freelance graphic designer a midst my studies. since 2022 I have pivoted towards mostly working as a web developer. I have made websites and logos for all kinds of companies and people in Finland.",
+    "skills": [
+      "Web Development",
+      "UI/UX Design",
+      "AstroJS",
+      "TailwindCSS",
+      "Graphic Design"
+    ]
+  },
+  {
+    "title": "Service Designer & Technical Researcher",
+    "timespan": "2023 Winter",
+    "company": "Legal Register Centre / Oikeusrekisterikeskus",
+    "location": "Hämeenlinna, Hybrid",
+    "description": "Worked in the Service Design team at ORK. Designed different kinds of templates and PowerPoints that were to be used when starting new processes. Also did some technical research such as sustainability and accessibility in ORK.",
+    "skills": [
+      "Service Design",
+      "Technical Research",
+      "Sustainability",
+      "Accessibility",
+      "PowerPoint"
+    ]
+  },
+  {
+    "title": "Logistics & Transportation Personell",
+    "timespan": "2021 Summer",
+    "company": "Tmi Tran Minh Tuan",
+    "location": "Riihimäki, On-site",
+    "description": "I worked as a logistics driver as well as a storage worker. The company was a small firm located in Riihimäki that specialized in selling berries, vegetables and other summer-goods. The day consisted of early mornings, sometimes at around midnight, and sporadic schedules due to the seasonal nature of the part-time job.",
+    "skills": [
+      "Logistics",
+      "Transportation",
+      "Early Mornings"
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+---
+import Header from "../components/header.astro"
+import experience from "../data/experience.json"
+
+type Experience = {
+  title: string
+  timespan: string
+  company: string
+  location: string
+  description: string
+  skills: string[]
+}
+---
+
+<article class="px-5 md:px-10">
+  <div class="max-w-content mx-auto space-y-10">
+    <Header id={5} title="Experience">Professional Experience</Header>
+    <div class="max-w-6xl mx-auto gap-y-10 grid lg:grid-cols-2">
+      {
+        experience.map((exp: Experience, index: number) => (
+          <div class="flex flex-col lg:col-span-2 lg:items-start">
+            <div
+              class={`space-y-3 rounded-lg max-w-xl
+              ${index % 2 === 0 ? "lg:text-end lg:self-start" : "lg:self-end"}`}
+            >
+              <div>
+                <p class="text-secondary">// {exp.timespan}</p>
+                <h3 class="text-5xl">{exp.title}</h3>
+              </div>
+              <h4 class="text-xl font-bold">{exp.company}</h4>
+              <p>📌 {exp.location}</p>
+              <p>{exp.description}</p>
+              <div
+                class={`flex flex-wrap gap-2 ${index % 2 === 0 ? "lg:justify-end" : ""}`}
+              >
+                {exp.skills.map((skill: string) => (
+                  <span
+                    class="px-4 py-2 bg-primary-700 rounded-full transition-all 
+                  drop-shadow-lg cursor-default select-none hover:bg-secondary-900"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    position: relative;
+    overflow: clip;
+    background: url("/images/mountainsbg.jpg") no-repeat center 0;
+    background-size: cover;
+    isolation: isolate;
+  }
+  /* Feather top and bottom, for seamless transition */
+  article::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(
+      to bottom,
+      theme("colors.primary.DEFAULT"),
+      transparent
+    );
+  }
+  article::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(
+      to top,
+      theme("colors.primary.DEFAULT"),
+      transparent
+    );
+  }
+</style>
