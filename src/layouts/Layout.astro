@@ -55,12 +55,12 @@ const { title } = Astro.props
     @apply py-20;
   }
   
-  a {
+  a, li.clickable {
     position: relative;
     white-space: nowrap;
   }
 
-  a::before {
+  a::before, li.clickable::before {
     /* Custom underline as an indicator of a link */
     content: "";
     position: absolute;

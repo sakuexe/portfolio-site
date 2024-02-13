@@ -4,6 +4,22 @@ import WorkCard from "../components/workcard.astro"
 import works from "../data/works.json"
 
 export type Work = (typeof works)[0]
+// get unique work types and count the number of each type
+const numberOfTypes: Record<string, number> = {}
+const workTypes: string[] = works
+  .map((work: Work) => {
+    if (numberOfTypes[work.type]) {
+      numberOfTypes[work.type]++
+    } else {
+      numberOfTypes[work.type] = 1
+    }
+    return work.type
+  })
+  .filter((value, index, self) => self.indexOf(value) === index)
+
+function displayWorkNumber(type: string) {
+  return numberOfTypes[type] < 10 ? `0${numberOfTypes[type]}` : numberOfTypes[type]
+}
 ---
 
 <section id="portfolio" class="max-w-content mx-auto space-y-8 px-5 md:px-10">
@@ -21,11 +37,65 @@ export type Work = (typeof works)[0]
     how they came to be, as well as the technologies and tools I used to create
     them.
   </p>
-  <p>
-    Filter by <span class="text-secondary">All</span> / Web Development / Graphic
-    Design
-  </p>
-  <div>
+  <ul id="filter" class="flex gap-2 [&>li]:select-none [&>li]:cursor-pointer">
+    <p>Filter by:</p>
+    <li data-filter="">All</li>
+    {
+      workTypes.map((type: string) => (
+        <>
+          <p>/</p>
+          <li data-filter={type}>
+            {type} 
+          </li>
+          <p class="text-sm select-none">{displayWorkNumber(type)}</p>
+        </>
+      ))
+    }
+  </ul>
+  <div class="grid grid-cols-fluid gap-5">
     {works.map((work: Work) => <WorkCard work={work} />)}
   </div>
 </section>
+
+<script>
+  let currentFilter = ""
+  const filter = document.querySelector("#filter")
+  const buttons = filter?.querySelectorAll("li")
+
+  toggleIndicator(document.querySelector("#filter > li") as HTMLElement)
+
+  function applyFilter(filter: string) {
+    // the logic behind the filtering
+    const works = document.querySelectorAll(
+      ".workcard"
+    ) as NodeListOf<HTMLElement>
+    works.forEach((work) => {
+      if (filter === "" || work.dataset.type === filter) {
+        work.classList.remove("hidden")
+      } else {
+        work.classList.add("hidden")
+      }
+    })
+  }
+
+  function toggleIndicator(target: HTMLElement) {
+    buttons?.forEach((button) => {
+      if (button !== target) {
+        button.classList.remove("text-secondary-400")
+        button.classList.add("clickable")
+        return
+      }
+      target.classList.add("text-secondary-400")
+      target.classList.remove("clickable")
+    })
+  }
+
+  buttons?.forEach((button) => {
+    button.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      currentFilter = target.dataset.filter || ""
+      toggleIndicator(target)
+      applyFilter(currentFilter)
+    })
+  })
+</script>

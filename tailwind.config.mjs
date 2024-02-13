@@ -9,6 +9,9 @@ export default {
       maxWidth: {
         'content': '100rem',
       },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit, minmax(25rem, 1fr))",
+      },
       colors: {
         'primary': {
           '50': '#f7f6f9',
