@@ -18,7 +18,9 @@ const workTypes: string[] = works
   .filter((value, index, self) => self.indexOf(value) === index)
 
 function displayWorkNumber(type: string) {
-  return numberOfTypes[type] < 10 ? `0${numberOfTypes[type]}` : numberOfTypes[type]
+  return numberOfTypes[type] < 10
+    ? `0${numberOfTypes[type]}`
+    : numberOfTypes[type]
 }
 ---
 
@@ -37,21 +39,21 @@ function displayWorkNumber(type: string) {
     how they came to be, as well as the technologies and tools I used to create
     them.
   </p>
-  <ul id="filter" class="flex gap-2 [&>li]:select-none [&>li]:cursor-pointer">
+  <div class="flex flex-wrap gap-x-2">
     <p>Filter by:</p>
-    <li data-filter="">All</li>
-    {
-      workTypes.map((type: string) => (
-        <>
-          <p>/</p>
-          <li data-filter={type}>
-            {type} 
-          </li>
-          <p class="text-sm select-none">{displayWorkNumber(type)}</p>
-        </>
-      ))
-    }
-  </ul>
+    <ul id="filter" class="flex flex-wrap gap-2 [&>li]:select-none [&>li]:cursor-pointer">
+      <li data-filter="">All</li>
+      {
+        workTypes.map((type: string) => (
+          <>
+            <p>/</p>
+            <li data-filter={type}>{type}</li>
+            <p class="text-sm select-none">{displayWorkNumber(type)}</p>
+          </>
+        ))
+      }
+    </ul>
+  </div>
   <div class="grid grid-cols-fluid gap-5">
     {works.map((work: Work) => <WorkCard work={work} />)}
   </div>
