@@ -3,6 +3,7 @@
 ---
 
 <form action="" method="post" class="grid gap-2 px-2 py-4 w-full">
+  <h4 class="font-bold">Contact Form</h4>
   <input type="text" name="name" placeholder="Name" />
   <span id="name_error" class="text-secondary-400"></span>
   <input type="text" name="email" placeholder="Email" />
@@ -16,11 +17,13 @@
     <button
       type="submit"
       class="bg-gradient-to-tr from-secondary-800 to-secondary-500 py-2 px-4 rounded-md
-      motion-safe:transition-all hover:brightness-125"
+      motion-safe:transition-all hover:shadow-lg hover:shadow-secondary-800 hover:brightness-125"
       >Send Message</button
     >
-    <button type="reset" class="border border-primary-500 py-2 px-4 rounded-md 
-      motion-safe:transition-all hover:bg-primary-100 hover:text-primary-950"
+    <button
+      type="reset"
+      class="border border-primary-500 py-2 px-4 rounded-md
+      motion-safe:transition-all hover:shadow-lg hover:shadow-secondary-800 hover:border-secondary-400"
       >Reset</button
     >
   </div>
@@ -30,5 +33,10 @@
   form > input,
   form > textarea {
     @apply px-4 py-2 bg-transparent border border-primary-500 rounded-md;
+  }
+
+  form > input:focus,
+  form > textarea:focus {
+    @apply outline-none border-secondary-400 shadow-md shadow-secondary-800;
   }
 </style>
